@@ -147,6 +147,7 @@ a.main_nav:hover {
 a.t1 {
 	font-family: Open Sans;
 	color:#4966a7;
+	font-size:.9em;
 }
 a.t1:hover {
 	text-decoration: underline;
@@ -196,7 +197,7 @@ table {
 /* Text */
 p {
 	color:#000000;
-	font-size:1em;
+	font-size:.9em;
 	font-family: Open Sans, verdana;
 	margin:0;
 	padding:0;
