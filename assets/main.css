@@ -63,7 +63,7 @@ div.header_container /* Container for header (banner + logo) */ {
 			background-color:#3f3f3f; 
 			border-bottom:8px solid;							
 			border-color:#333333;
-			padding-left:10px;
+			padding:10px;
 		}
 		div.section_title_container {
 		}
@@ -126,6 +126,11 @@ div.footer_container {
 		margin:auto;
 		padding-bottom:10px;
 	}
+		div#footer_buttons {
+			float:right;
+			margin-top:-5px;
+			margin-right:10px;
+		}
 
 
 /*--------------------------------------------------------*/
@@ -166,9 +171,9 @@ a.main_nav:hover {
 	color:#9c9c9c;
 }
 a.t1 /* Link type 1. Used for projects */{
-	font-family: Open Sans;
+	font-family: Open Sans, sans-serif;
 	color:#4966a7;
-	font-size:.9em;
+	font-size:1em;
 }
 a.t1:hover {
 	text-decoration: underline;
@@ -208,14 +213,6 @@ a#northeastern_logo /* Northeastern Logo seen in footer */ {
 	width:351px;
 	height:33px;
 	margin:10px;
-}
-a#northeastern_sub_logo {
-	background: url('footer/ne_sub_logo.png') no-repeat 0 0;
-	background-size:100%;
-	display:block;
-	width:344px;
-	height:18px;
-	margin:-10 0 0 10px;
 }
 
 
@@ -287,6 +284,11 @@ h3 {
 	font-weight:400;
 	margin:0;
 	padding:0;
+}
+h3.tagline {
+	font-size: 25px;
+	font-family: Questrial, sans-serif;
+	color:#fefefe;
 }
 
 
