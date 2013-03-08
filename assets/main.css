@@ -1,6 +1,5 @@
 /*
 * CREW Website 
-* by Nick Alekhine
 */
 
 
@@ -9,7 +8,9 @@
 body {
 	padding:0px;	
 	margin:0px;	
-	background-image: url('images/st.png');
+	background-color:#181818;
+	background-image:url('background/bg_squares.png');
+	background-repeat:repeat;
 }
 
 /*--------------------------------------------------------*/
@@ -24,7 +25,7 @@ div.container /* Main container for page. */ {
 	min-height:100%;		
 	min-width:1024px;
 }
-div.header_container {
+div.header_container /* Container for header (banner + logo) */ {
 	position:relative;
 	background-color:#fefefe;
 	width:100%;
@@ -32,16 +33,16 @@ div.header_container {
 	padding-top:10px;
 	padding-bottom:10px;
 }
-	div.header {
+	div.header /* Sets up the container that auto centers */ {
 		margin:auto;
 		width:1024px;
 	}
 		div.banner_container {
 			float:left;
-
 		}
 		div.main_nav_container {
 			float:right;
+			width:615px;
 		}
 	div.meat {
 		position:relative;
@@ -52,52 +53,60 @@ div.header_container {
 		top:13px;
 		padding-top:10px;
 		padding-bottom:120px;
-		/*
-		-moz-box-shadow: -4px 4px 0 4px #3f3f3f;
-		-webkit-box-shadow: -4px 4px 0 4px #3f3f3f;
-		box-shadow: -4px 4px 0 4px #3f3f3f;
-		*/
 	}
-		div#meat_header {
+		div.meat_header_container {
+			overflow:hidden;
+			background-color:#fefefe;
+			margin-bottom:10px;
+		}
+		div.meat_header {
 			background-color:#3f3f3f; 
-			width:100%;
 			border-bottom:8px solid;							
 			border-color:#333333;
-			padding-left:10px;
+			padding:10px;
 		}
-		div.section_title {
-			background-color: #3f3f3f;
-			margin-left:10px;
-			margin-bottom:-8px;
-			padding:5px;
-			border-radius:1px;
+		div.section_title_container {
 		}
-		div.section_body {
-			background-color:#fefefe;
-			border-top:8px solid;
-			border-color:#3f3f3f;
-			margin-bottom:20px;
-			/*padding-left:10px;
-			padding-bottom:10px;
-			padding-right:10px;*/
-		}
+			div.section_title {
+				background-color: #3f3f3f;
+				margin-left:0px;
+				margin-bottom:-8px;
+				padding:5px;
+				border-radius:1px;
+			}
+			div.section_body {
+				background-color:#fefefe;
+				border-top:8px solid;
+				border-color:#3f3f3f;
+				margin-bottom:20px;
+			}
+			div.project_container {
+				border-bottom:1px solid;
+				border-color:#aeaeae;
+				margin-bottom:10px;
+				margin-top:10px;
+				padding-bottom:10px;
+			}
+				div.project_header {
+					
+				}
 		div.column_a {
 			float:left;
 			width:760px;
 			background-color: transparent;
 		}
-		div.column_a .section_body{
+			div.column_a .section_body{
 				padding-left: 30px;
 				padding-right: 30px;
 				padding-top: 10px;
 				padding-bottom: 20px;
-		}
+			}
 		div.column_b {
 			float:right;
 			width:200;
 			background-color: transparent;
 		}
-		div.column_b .section_body{
+			div.column_b .section_body{
 				padding-left: 15px;
 				padding-right: 15px;
 				padding-top: 10px;
@@ -117,6 +126,11 @@ div.footer_container {
 		margin:auto;
 		padding-bottom:10px;
 	}
+		div#footer_buttons {
+			float:right;
+			margin-top:-5px;
+			margin-right:10px;
+		}
 
 
 /*--------------------------------------------------------*/
@@ -139,7 +153,7 @@ a.banner:hover {
 	cursor:pointer;
 	opacity:.5;
 }
-a.main_nav {
+a.main_nav /* Main navigation elements */ {
 	font-family: sans-serif;
 	font-weight:bold; 
 	font-size:2.5em;
@@ -156,30 +170,49 @@ a.main_nav {
 a.main_nav:hover {
 	color:#9c9c9c;
 }
-a.t1 {
-	font-family: Open Sans;
+a.t1 /* Link type 1. Used for projects */{
+	font-family: Open Sans, sans-serif;
 	color:#4966a7;
-	font-size:.9em;
+	font-size:1em;
 }
 a.t1:hover {
 	text-decoration: underline;
 }
+a.t2 /* Link type 2. Used for element switcher */ {
+	color:#4966a7;
+	font-size:1.4em;
+	font-family: sans-serif;
+	font-weight:200;
+	margin:0;
+	padding:0;
+}
+a.t2:hover {
+	text-decoration: underline;
+}
 
-a#northeastern_logo {
+
+a.top_button /* Top button */ {
+	color:#ffffff;
+	font-size:2em;
+	font-family: sans-serif;
+	font-weight:200;
+	margin:0;
+	padding:0;
+	-webkit-transition: color .25s ease-in-out;
+	-moz-transition: color .25s ease-in-out;
+}
+
+a.top_button:hover {
+	color:#9c9c9c;
+}
+
+a#northeastern_logo /* Northeastern Logo seen in footer */ {
 	background: url('footer/northeastern_logo.png') no-repeat 0 0;
 	background-size:100%;
 	display:block;
 	width:351px;
 	height:33px;
 	margin:10px;
-}
-a#northeastern_sub_logo {
-	background: url('footer/ne_sub_logo.png') no-repeat 0 0;
-	background-size:100%;
-	display:block;
-	width:344px;
-	height:18px;
-	margin:-10 0 0 10px;
 }
 
 
@@ -195,7 +228,7 @@ ul.main_nav, ul.other_nav /*Used in main navigation bar*/ {
 
 li.main_nav /*Used in main navigation bar*/ {
 	float:left;
-	width:205px;
+	width:33.33%;
 }
 
 li.other_nav /*Used in column b navigation bar*/{
@@ -263,11 +296,16 @@ h2 {
 }
 h3 {
 	color:#262626;
-	font-size:1.5em;
+	font-size:1.4em;
 	font-family:Open Sans, sans-serif;
 	font-weight:400;
 	margin:0;
 	padding:0;
+}
+h3.tagline {
+	font-size: 25px;
+	font-family: Questrial, sans-serif;
+	color:#fefefe;
 }
 
 
