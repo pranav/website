@@ -21,45 +21,41 @@
     <!-- Smooth Scrolling -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
     <script>
-    var jump=function(e)
-    {
-         //prevent the "normal" behaviour which would be a "hard" jump
-         e.preventDefault();
-         //Get the target
-         var target = $(this).attr("href");
-         //perform animated scrolling
-         $('html,body').animate(
-         {
-             //get top-position of target-element and set it as scroll target
-             scrollTop: $(target).offset().top
+    var jump = function(e) {
+       //prevent the "normal" behaviour which would be a "hard" jump
+       e.preventDefault();
+       //Get the target
+       var target = $(this).attr("href");
+       //perform animated scrolling
+       $('html,body').animate({
+         //get top-position of target-element and set it as scroll target
+         scrollTop: $(target).offset().top
          //scrolldelay: 2 seconds
-         },1300,function()
-         {
-             //attach the hash (#jumptarget) to the pageurl
-             location.hash = target;
-         });
-
+       }, 1300, function() {
+         //attach the hash (#jumptarget) to the pageurl
+         location.hash = target;
+       });
     }
 
-    $(document).ready(function()
-    {
-         $('a[href*=#]').bind("click", jump);
-               $('a[id*="project"]').click(toggle);
-               function toggle() {
-                  prefix = this.id.split('_')[0];
-                  switchMenu(prefix + '_projects');
-                  switchMenu(prefix + '_project_up');
-                  switchMenu(prefix + '_project_down')
-               }
+    $(document).ready(function() {
+      $('a[href*=#]').bind("click", jump);
+      $('a[id*="project"]').click(toggle);
+
+      function toggle() {
+        prefix = this.id.split('_')[0];
+        switchMenu(prefix + '_projects');
+        switchMenu(prefix + '_project_up');
+        switchMenu(prefix + '_project_down')
+      }
+
     });
     </script>
 
     <!-- Display Switcher -->
     <script type = "text/javascript">
-    function switchMenu(obj)
-    {
+    function switchMenu(obj) {
       var el = document.getElementById(obj);
-            el.style.display = el.style.display.length ? '' : 'none';
+      el.style.display = el.style.display.length ? '' : 'none';
     }
     </script>
 
@@ -77,21 +73,9 @@
         <!-- Main nav -->
         <div class = "main_nav_container">
           <ul class = "main_nav">
-            <li class = "main_nav">
-              <a class = "main_nav" href = "#about">
-                about
-              </a>
-            </li>
-            <li class = "main_nav">
-              <a class = "main_nav" href = "#projects">
-                projects
-              </a>
-            </li>
-            <li class = "main_nav">
-              <a class = "main_nav" href = "#contact">
-                contact
-              </a>
-            </li>
+            <li class = "main_nav"><a class = "main_nav" href = "#about">about</a></li>
+            <li class = "main_nav"><a class = "main_nav" href = "#projects">projects</a></li>
+            <li class = "main_nav"><a class = "main_nav" href = "#contact">contact</a></li>
           </ul>
         </div>
       </div>
@@ -139,12 +123,8 @@
             </div>
             <!-- Body -->
             <div class = "section_body">
-              <h2>
-                We make cool stuff.
-              </h2>
-              <p>
-                We work on stuff that ranges from web development to infrastructure to cloud computing, so if you're interested in any or all of the above definitely consider getting involved. Check out the projects section on this page to see what we've worked on and what we're building now.
-              </p>
+              <h2>We make cool stuff.</h2>
+              <p>We work on stuff that ranges from web development to infrastructure to cloud computing, so if you're interested in any or all of the above definitely consider getting involved. Check out the projects section on this page to see what we've worked on and what we're building now.</p>
             </div>
           </div>
 
@@ -163,14 +143,8 @@
             </div>
             <!-- Body -->
             <div class = "section_body">
-              <h2>
-                Check out what we're doing.
-              </h2>
-              <p>
-                All of our projects are currently hosted on the official <a class = "t1" href = "https://github.com/crew">CREW Github account</a>. We also have constructed a list of current and completed projects seen below.
-                <br>
-                <br>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque feugiat lacus vitae risus dignissim at iaculis arcu elementum. Cras consectetur, diam sed auctor dignissim, magna mauris malesuada tortor, et porttitor turpis ipsum eget arcu. Donec sed eleifend tortor. Aenean ante enim, faucibus vel lacinia ut, placerat eget lorem. Praesent sed urna sed orci malesuada lobortis. Fusce ut augue vel nibh aliquam ultricies ut at risus. Morbi ac libero sapien, et dignissim felis. Nulla facilisi. Morbi rhoncus purus a ligula rhoncus pharetra. Donec erat lacus, posuere at bibendum et, hendrerit vel nunc. Cras eu nibh nec leo dictum porta in quis libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              <h2>Check out what we're doing.</h2>
+              <p>All of our projects are currently hosted on the official <a class = "t1" href = "https://github.com/crew">CREW Github account</a>. We also have constructed a list of current and completed projects seen below.
               </p>
 
               <!-- Container for completed projects -->
@@ -187,25 +161,12 @@
                 <!-- List of completed projects -->
                 <div id = "completed_projects" style = "display:none">
                   <div>
-                    <a href = "http://pitcam.ccs.neu.edu" class = "t2" >
-                      Pitcam
-                    </a>
-                    <p>
-                      Phasellus imperdiet diam a orci convallis eu fermentum mi porta. Phasellus felis diam, cursus varius aliquet id, vestibulum eu arcu. Nunc at libero ut eros suscipit fringilla eu vitae est. Morbi pharetra convallis felis vel tincidunt. Nam id dolor nisi. Vestibulum molestie mauris a sapien commodo viverra. Ut vulputate, turpis et imperdiet auctor, ipsum sapien auctor erat, id venenatis libero lacus sit amet ligula. Phasellus est sapien, eleifend eget dictum quis, accumsan a nulla.
-                    </p>
-                  </div>
-                  <br>
-
-                  <div>
-                    <a href = "#" class = "t2" >
-                      Project 2
-                    </a>
-                    <p>
-                      Phasellus imperdiet diam a orci convallis eu fermentum mi porta. Phasellus felis diam, cursus varius aliquet id, vestibulum eu arcu. Nunc at libero ut eros suscipit fringilla eu vitae est. Morbi pharetra convallis felis vel tincidunt. Nam id dolor nisi. Vestibulum molestie mauris a sapien commodo viverra. Ut vulputate, turpis et imperdiet auctor, ipsum sapien auctor erat, id venenatis libero lacus sit amet ligula. Phasellus est sapien, eleifend eget dictum quis, accumsan a nulla.
-                    </p>
+                    <a href = "http://pitcam.ccs.neu.edu" class = "t2" >Pitcam</a>
+                    <p>The pitcam is a webcam that lets you know if anyone is in the pit and if any events are going on. If you don't have access and need to have someone let you in, this is the way to know.</p>
                   </div>
                 <!-- / list of completed projects -->
                 </div>
+
               <!-- / completed projects container -->
               </div>
 
